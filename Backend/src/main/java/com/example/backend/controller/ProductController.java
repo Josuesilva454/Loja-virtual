@@ -54,7 +54,7 @@ public class ProductController {
         }
 
         productService.updateProduct(productDto, productId);
-        return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Produto atualizar com sucesso"), HttpStatus.OK);
+        return new ResponseEntity<ApiResponse>(new ApiResponse(true, "Produto atualizado com sucesso"), HttpStatus.OK);
     }
 }
 
