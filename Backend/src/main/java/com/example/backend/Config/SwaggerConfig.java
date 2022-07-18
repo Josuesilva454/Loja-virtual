@@ -27,7 +27,7 @@ public class SwaggerConfig {
     }
 
     private ApiInfo getApiInfo() {
-        Contact contact = new Contact("Lojavirtual", "http://webtutsplus.com", "josuerosasilva49@gmail.com");
+        Contact contact = new Contact("Lojavirtual- GiModas", "https://github.com/Josuesilva454/Loja-virtual/tree/main/Backend", "josuerosasilva49@gmail.com");
         return new ApiInfoBuilder()
                 .title("Ecommerce API")
                 .description("Documentation Ecommerce api")
