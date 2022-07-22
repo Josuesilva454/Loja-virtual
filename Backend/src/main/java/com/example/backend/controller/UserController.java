@@ -1,6 +1,8 @@
 package com.example.backend.controller;
 
 import com.example.backend.dto.ResponseDto;
+import com.example.backend.dto.user.SignInDto;
+import com.example.backend.dto.user.SignInReponseDto;
 import com.example.backend.dto.user.SignupDto;
 import com.example.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,13 +16,21 @@ import org.springframework.web.bind.annotation.RestController;
 public class UserController {
 
     @Autowired
-     UserService userService;
-      //duas api
+    UserService userService;
+    //duas api
 
     //signup
 
     @PostMapping("/signup")
-    public ResponseDto signup(@RequestBody SignupDto signupDto){
+    public ResponseDto signup(@RequestBody SignupDto signupDto) {
         return userService.signUp(signupDto);
+
     }
-}
+        @PostMapping("/signin")
+        public SignInReponseDto signIn (@RequestBody SignInDto signInDto){
+            return userService.signIn(signInDto);
+
+        }
+
+    }
+

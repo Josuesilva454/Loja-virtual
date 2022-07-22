@@ -4,6 +4,7 @@ import com.example.backend.model.User;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.UUID;
 
 @Entity
 @Table(name = "tokens")
@@ -22,6 +23,8 @@ public class AuthenticationToken {
     @JoinColumn(nullable = false, name = "user_id")
     private User user;
 
+    public AuthenticationToken() {
+    }
 
 
     public String getToken() {
@@ -54,4 +57,11 @@ public class AuthenticationToken {
     public void setId(Integer id) {
         this.id = id;
     }
-}
+
+    public AuthenticationToken(User user) {
+        this.user = user;
+        this.created_date = new Date ();
+        this.token = UUID.randomUUID().toString();
+    }
+
+    }
