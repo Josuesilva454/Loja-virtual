@@ -19,12 +19,11 @@ public class Product {
     private @NotNull double price; //preço
     private @NotNull String description;
 
-    @JsonIgnore
+
     @ManyToOne
+    @JsonIgnore
     @JoinColumn(name = "category_id")
     Category category;
-
-
 
     public String getName() {
         return name;
